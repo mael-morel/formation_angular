@@ -1,0 +1,16 @@
+<html ng-app="FirstApp">
+<head>
+    <meta charset="utf-8">
+    <title>Application AngularJs</title>
+</head>
+<body>
+    <div ng-controller="FirstController as firstController">
+        <input type="text" ng-model="firstController.application.name"/>
+        <p>Application name: {{firstController.application.name}}</p>
+        <button ng-click="firstController.printApplication()">Print application informations</button>
+    </div>
+
+<script src="angular.js"></script>
+<script src="controller.js"></script>
+</body>
+</html>
