@@ -1,0 +1,12 @@
+<div>
+    <p>The selected account number is: {{accountDetail.accountNumber}}</p>
+
+    <h3>Details</h3>
+    {{accountDetail.account.id}}
+    {{accountDetail.account.type}}
+    {{accountDetail.account.comment}}
+
+    <h4>Nombre d'appels au service: {{accountDetail.serverCallCount}}</h4>
+
+    <button ui-sref="listAccounts">List all accounts</button>
+</div>

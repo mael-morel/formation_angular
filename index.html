@@ -1,16 +1,15 @@
-<html ng-app="FirstApp">
+<html ng-app="myApp">
 <head>
     <meta charset="utf-8">
     <title>Application AngularJs</title>
 </head>
 <body>
-    <div ng-controller="FirstController as firstController">
-        <input type="text" ng-model="firstController.application.name"/>
-        <p>Application name: {{firstController.application.name}}</p>
-        <button ng-click="firstController.printApplication()">Print application informations</button>
-    </div>
+
+    <button ui-sref="listAccounts">List all accounts</button>
 
 <script src="angular.js"></script>
-<script src="controller.js"></script>
+<script src="angular-ui-router.js"></script>
+<script src="myApp.module.js"></script>
+<script src="accounts.controller.js"></script>
 </body>
 </html>
