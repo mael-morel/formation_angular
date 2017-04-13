@@ -1,5 +1,60 @@
 <div>
-    <h3>Page de création des comptes</h3>
+    <div>
+        <h2>Créer un compte</h2>
 
-    <button ui-sref="listAccounts">Revenir à la liste des comptes</button>
+        <form name="createAccountCtrl.accountForm" novalidate>
+            Type  de compte (obligatoire):
+            <select name="accountType" ng-model="createAccountCtrl.account.type" required>
+                <option value="ccp">Compte courant</option>
+                <option value="livretOrange">Livret Orange</option>
+            </select>
+        <span ng-show="createAccountCtrl.accountForm.accountType.$touched && createAccountCtrl.accountForm.accountType.$error.required">
+            Veuillez indiquer le type de compte
+        </span>
+            <br>
+
+            Propriétaire (obligatoire):
+            <input name="ownerName" type="text" ng-model="createAccountCtrl.account.owner.name" required/>
+        <span ng-show="createAccountCtrl.accountForm.ownerName.$touched && createAccountCtrl.accountForm.ownerName.$error.required">
+            Veuillez indiquer votre nom
+        </span>
+            <br />
+            <br />
+
+            Civilité:
+            <input name="ownerCivility" type="radio" ng-model="createAccountCtrl.account.owner.civility" value="Mr"/> Mr
+            <input name="ownerCivility" type="radio" ng-model="createAccountCtrl.account.owner.civility" value="Mme"/> Mme
+            <br />
+            <br />
+
+            Email (obligatoire):
+            <input name="ownerEmail" type="email" ng-model="createAccountCtrl.account.owner.email" required/>
+        <span ng-show="createAccountCtrl.accountForm.ownerEmail.$touched && createAccountCtrl.accountForm.ownerEmail.$error.required">
+            Veuillez fournir votre addresse mail
+        </span>
+        <span ng-show="createAccountCtrl.accountForm.ownerEmail.$touched && createAccountCtrl.accountForm.ownerEmail.$error.email">
+            Cette addresse mail n'est pas valide
+        </span>
+            <br />
+            <br />
+
+            Téléphone:
+            <input name="ownerPhone" ng-model="createAccountCtrl.account.owner.phone" ng-pattern="/^06(\d){8}$/">
+            <span ng-show="createAccountCtrl.accountForm.ownerPhone.$error.pattern">Mauvais numéro (exemple: 0613567698)</span>
+            <br />
+            <br />
+
+            Commentaires:
+            <textarea name="comment" ng-model="createAccountCtrl.account.comment" ng-maxlength="10"></textarea>
+        <span ng-show="createAccountCtrl.accountForm.comment.$error.maxlength">
+            10 lettres maximum
+        </span>
+            <br />
+            <br />
+
+            <button ng-click="createAccountCtrl.createAccount()">Créer</button>
+        </form>
+
+        <button ui-sref="listAccounts">Revenir à la liste des comptes</button>
+    </div>
 </div>
