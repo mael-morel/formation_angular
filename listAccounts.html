@@ -2,10 +2,8 @@
 <div>
     <ul>
         <li ng-repeat="account in listAccounts.accounts">
-            <a href="" ui-sref="accountDetail({accountNumber:account.id})">
-                number: {{account.id}}
-                owner: {{account.owner.name}}
-            </a>
+            number: {{account.number}}
+            owner: {{account.owner}}
         </li>
     </ul>
 

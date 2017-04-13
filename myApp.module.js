@@ -8,7 +8,12 @@
         $stateProvider
             .state('listAccounts', {
                 url: '/listAccounts',
-                template: '<h1>COUCOU</h1>'
+                controller: 'ListAccountsController as listAccounts',
+                templateUrl: 'listAccounts.html'
+            })
+            .state('createAccount', {
+                url: '/createAccount',
+                templateUrl: 'createAccount.html'
             });
         $urlRouterProvider.otherwise('listAccounts');
     }

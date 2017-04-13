@@ -1,5 +1,4 @@
 
-
 (function (){
     angular.module("myApp").controller('ListAccountsController', ListAccountsController);
 
