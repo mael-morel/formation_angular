@@ -1,7 +1,8 @@
 
 (function (){
-    angular.module("myApp", [
-        'ui.router'
+    angular.module('myApp', [
+        'ui.router',
+        'accounts'
     ]).config(configureRoutes);
 
     function configureRoutes($stateProvider, $urlRouterProvider){
@@ -9,11 +10,11 @@
             .state('listAccounts', {
                 url: '/listAccounts',
                 controller: 'ListAccountsController as listAccounts',
-                templateUrl: 'listAccounts.html'
+                templateUrl: 'accounts/listAccounts.html'
             })
             .state('createAccount', {
                 url: '/createAccount',
-                templateUrl: 'createAccount.html'
+                templateUrl: 'accounts/createAccount.html'
             });
         $urlRouterProvider.otherwise('listAccounts');
     }
