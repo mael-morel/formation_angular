@@ -28,13 +28,14 @@
             <br />
 
             Email (obligatoire):
-            <input name="ownerEmail" type="email" ng-model="createAccountCtrl.account.owner.email" required/>
-        <span ng-show="createAccountCtrl.accountForm.ownerEmail.$touched && createAccountCtrl.accountForm.ownerEmail.$error.required">
-            Veuillez fournir votre addresse mail
-        </span>
-        <span ng-show="createAccountCtrl.accountForm.ownerEmail.$touched && createAccountCtrl.accountForm.ownerEmail.$error.email">
-            Cette addresse mail n'est pas valide
-        </span>
+            <input name="ownerEmail" type="email" ng-model="createAccountCtrl.account.owner.email" required ng-maxlength="20"/>
+
+            <div ng-show="createAccountCtrl.accountForm.ownerEmail.$touched && createAccountCtrl.accountForm.ownerEmail.$error"
+                 ng-messages="createAccountCtrl.accountForm.ownerEmail.$error" ng-messages-multiple>
+                <span ng-message="required">Required</span>
+                <span ng-message="maxlength">Too long</span>
+                <span ng-message="email">Cette addresse mail n'est pas valide</span>
+            </div>
             <br />
             <br />
 

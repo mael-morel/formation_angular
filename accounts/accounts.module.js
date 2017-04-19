@@ -1,6 +1,6 @@
 
 (function (){
-    angular.module('accounts', [])
+    angular.module('accounts', ['ngMessages'])
         .run(function(){
             console.log('Running accounts module');
         })
